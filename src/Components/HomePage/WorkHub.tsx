@@ -8,10 +8,11 @@ import { useNavigate } from 'react-router-dom';
 import {chevronRight} from 'react-icons-kit/fa/chevronRight';
 import { Icon } from "react-icons-kit";
 
+
 const WorkHub: React.FC = ()=>{
     const navigate = useNavigate();
     return (
-        <>
+        <>        
             <SidePanel />
             <HubContent />
         </>

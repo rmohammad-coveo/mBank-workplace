@@ -21,15 +21,10 @@ const ContextForm = () => {
 };
 
 const Wrapper = styled.div`
-  margin: 20px;
-  height: 32%;
+  margin: 30px 20px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  @media (min-width:1600px) {
-    height: 35%;
-  }
 `;
 
 export default ContextForm;
