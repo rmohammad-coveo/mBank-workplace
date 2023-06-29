@@ -1,4 +1,4 @@
-import { useEffect, useState, FunctionComponent, useContext } from "react";
+  import { useEffect, useState, FunctionComponent, useContext } from "react";
 import {
   RecommendationList as HeadlessRecommendationList,
   loadClickAnalyticsActions,
@@ -15,6 +15,7 @@ import SampleImage from "../../assets/sampleImages/recommendation.png";
 import { CustomContextContext } from "../CustomContext/CustomContextContext";
 import { SlackConfig } from "../../config/HomeConfig";
 import Bulb from '../../assets/bulb.png';
+import SlackLogo from '../../assets/slack.png'
 import SharePoint from '../../assets/sharePoint_logo.png';
 import Coveo from '../../assets/coveo.png';
 
@@ -58,9 +59,9 @@ export const RecommendationListRenderer: FunctionComponent<
   const NumberOfResult = SlackConfig.numberOfResults;
   return (
     <MainWrapper>
-      <div style={{display: 'flex', width : '100%'}}>
-        <div style={{flexDirection: 'row', width : '5%'}}>
-        <Logo src={Bulb}/>
+      <div style={{display: 'flex', width : '100%', alignItems: "center"}}>
+        <div style={{flexDirection: 'row', width : '5%', marginRight: "8px"}}>
+        <Logo src={SlackLogo}/>
         </div>
         <div style={{flexDirection: 'row', width : '95%'}}>
         <Title>{SlackConfig.title}</Title>
@@ -77,12 +78,15 @@ export const RecommendationListRenderer: FunctionComponent<
                 const imageURL: string = temp as string;
                 const date:  number | string  = tempo as number;
 
+                const realName = recommendation.raw.slackuserrealname as string;
+                const userName = recommendation.raw.slackuserusername as string;
+
               return (
                 <div key={recommendation.title + recommendation.uniqueId}>
                   <SlackCard
                     video={false}
-                    title={recommendation.title}
-                    description={recommendation.excerpt}
+                    title={realName}
+                    handler={userName}
                     date={date}
                     image={imageURL ? imageURL : Coveo}
                     clickUri={recommendation.clickUri}
@@ -142,18 +146,19 @@ export default SlackList;
 const MainWrapper = styled.div`
   width: 95%;
   position: relative;
-  padding: 40px 20px;
+  padding: 10px 20px;
   display: flex;
   flex-flow: column wrap;
   align-content: flex-start;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
 `;
 
 const Logo = styled.img`
 width: 32px;
 margin-top: 30px;
 margin-bottom: 10px;
-filter: drop-shadow(0 0 3px #36ddff);
+position: relative;
+}
 `
 
 const Title = styled.h2`

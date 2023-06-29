@@ -25,7 +25,7 @@ You can later set which facet to show in each Tab
 export const FacetConfig = [
   {
     field: "source",
-    title: "Source",
+    title: "źródło",
   },
   {
     field: "author",
@@ -172,10 +172,12 @@ You can leave the Array empty if you don't want any tabs
 
 */
 
+const polishCondition = `@language==Polish`;
+
 export const SearchPageTabConfig : SearchPageTabConfigType[] = [
   {
-    caption: "All",
-    expression: "",
+    caption: "wszystko",
+    expression: "" + polishCondition,
     isActive: true,
     sideBarRecommendationConfig: [
       {
@@ -191,7 +193,7 @@ export const SearchPageTabConfig : SearchPageTabConfigType[] = [
   },
   {
     caption: "KNF",
-    expression: `@source==KNF`,
+    expression: `@source==KNF AND` + polishCondition,
     isActive: false,
     sideBarRecommendationConfig: [
       {
@@ -213,7 +215,7 @@ export const SearchPageTabConfig : SearchPageTabConfigType[] = [
   }, */
   {
     caption: "Gazeta",
-    expression: `@source==Gazeta`,
+    expression: `@source==Gazeta AND` + polishCondition,
     isActive: false,
     facetToInclude: ["concepts"],
   },
@@ -224,8 +226,8 @@ export const SearchPageTabConfig : SearchPageTabConfigType[] = [
     facetToInclude: ["concepts"],
   },
   {
-    caption: "Facebook Marketplace",
-    expression: ``,
+    caption: "Facebook Workplace",
+    expression: `@source==("Facebook Workplace", "Facebook Workplace Posts")`,
     isActive: false,
     facetToInclude: ["concepts"],
   },
@@ -237,7 +239,7 @@ export const SearchPageTabConfig : SearchPageTabConfigType[] = [
   }, */
   {
     caption: "Youtube",
-    expression: `@filetype=="youtubevideo"`,
+    expression: `@filetype=="youtubevideo" AND` + polishCondition,
     isActive: false,
     facetToInclude: ["concepts"],
   },

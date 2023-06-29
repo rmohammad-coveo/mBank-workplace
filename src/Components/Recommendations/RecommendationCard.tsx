@@ -48,10 +48,10 @@ const RecommendtionCard: React.FC<RecommendationCardType> = ({
         onMouseUp = {onMouseUp} */
     >
       <ImageContainer>
+        <Title>{title.toLocaleUpperCase()}</Title>
         <Image src={image} />
       </ImageContainer>
       <TextWrapper>
-        <Title>{title.toLocaleUpperCase()}</Title>
         <SubTitle>{description}</SubTitle>
         <ReferralLink>
         {newdate.getDate() +
@@ -81,6 +81,9 @@ export const SkeletonRecommendtionCard: React.FC = () => {
 
 const ImageContainer = styled.div`
   overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const Image = styled.img`
@@ -94,10 +97,9 @@ transition: 0.2s ease-in-out all;
 const TextWrapper = styled.div`
   display: flex;
   width: 100%;
-  height: 180px;
   align-items: center;
   justify-content: space-around;
-  padding: 10px 20px;
+  margin: 24px 0;
   flex-direction: column;
 `;
 
@@ -108,10 +110,8 @@ const Title = styled.a`
   font-family: canada-type-gibson;
   text-rendering: optimizeLegibility;
   font-style: normal;
-  align-self: flex-start;
   font-weight: 600;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 14px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -130,14 +130,15 @@ text-rendering: optimizeLegibility;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
-`;
-
-const ReferralLink = styled.a`
+  `;
+  
+  const ReferralLink = styled.a`
+  margin-top: 16px;
   font-family: inherit;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
-  margin-top: 10px;
+  margin-left: 8px;
   color: ${Theme.primaryText};
   text-decoration: none;
   display: flex;
@@ -154,7 +155,7 @@ max-width: 37.5em;
 min-width: 17.5em;
 box-sizing: border-box;
 transition: transform .2s;
-padding: 2px;
+padding: 22px;
 height: 230px;
 width: 200px;
 overflow: hidden;

@@ -15,6 +15,8 @@ const DidYouMeanRenderer: FunctionComponent<DidYouMeanProps> = (props) => {
   if (!state.hasQueryCorrection) {
     return null;
   }
+
+  console.log(state)
  
   if (state.wasAutomaticallyCorrected) {
     return (

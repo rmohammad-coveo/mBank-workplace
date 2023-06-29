@@ -55,13 +55,13 @@ const ContextDataTable = ({ContextData, profileSelected, setContextData,handleSa
         <thead>
           <tr>
             <th>
-              <Title>Active</Title>
+              <Title>aktywne</Title>
             </th>
             <th>
-              <Title>Key Name</Title>
+              <Title>nazwa</Title>
             </th>
             <th>
-              <Title>Key Value</Title>
+              <Title>wartość</Title>
             </th>
             <th>
               
@@ -100,7 +100,7 @@ const ContextDataTable = ({ContextData, profileSelected, setContextData,handleSa
       <AddIcon icon ={plus} size={32} onClick={handleNewRow}/>
       
     </Wrapper>
-    <Button onClick={handleSave}>Save</Button>
+    <Button onClick={handleSave}>zapisz</Button>
     </>
   );
 };

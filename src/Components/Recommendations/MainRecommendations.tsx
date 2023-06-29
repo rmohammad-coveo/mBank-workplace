@@ -59,7 +59,7 @@ export const RecommendationListRenderer: FunctionComponent<
   return (
     <MainWrapper>
       <div style={{display: 'flex', width : '100%'}}>
-        <div style={{flexDirection: 'row', width : '5%'}}>
+        <div style={{flexDirection: 'row', width : '5%', }}>
         <Logo src={Bulb}/>
         </div>
         <div style={{flexDirection: 'row', width : '95%'}}>
@@ -142,11 +142,11 @@ export default MainRecommendationList;
 const MainWrapper = styled.div`
   width: 95%;
   position: relative;
-  padding: 40px 20px;
+  padding: 10px 20px;
   display: flex;
   flex-flow: column wrap;
   align-content: flex-start;
-  margin-bottom: 30px;
+
 `;
 
 const Logo = styled.img`

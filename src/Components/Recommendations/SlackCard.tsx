@@ -8,7 +8,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 interface RecommendationCardType {
   title: string;
-  description: string;
+  handler: string;
   date: number;
   image: string;
   video?: boolean;
@@ -22,7 +22,7 @@ interface RecommendationCardType {
 
 const SlackCard: React.FC<RecommendationCardType> = ({
   title,
-  description,
+  handler,
   date,
   image,
   video = true,
@@ -51,15 +51,8 @@ const SlackCard: React.FC<RecommendationCardType> = ({
         <Image src={image} />
       </ImageContainer>
       <TextWrapper>
-        <Title>{title.toLocaleUpperCase()}</Title>
-        <SubTitle>{description}</SubTitle>
-        <ReferralLink>
-        {newdate.getDate() +
-                      "/" +
-                      (newdate.getMonth() + 1) +
-                      "/" +
-                      newdate.getFullYear()}
-        </ReferralLink>
+        <Title>{title}</Title>
+        <SubTitle>@{handler}</SubTitle>
       </TextWrapper>
     </MainWrapper>
   );
@@ -84,24 +77,19 @@ const ImageContainer = styled.div`
 `;
 
 const Image = styled.img`
+border-radius: 50%;
 object-fit: contain;
 object-position: center center;
-width: 20%;
-height: 20%;
+height: 50px;
+width: 50px;
 margin-left: 15px;
 transition: 0.2s ease-in-out all;
 `;
 const TextWrapper = styled.div`
   display: flex;
-  width: 100%;
-  height: 180px;
-  align-items: center;
-  justify-content: space-around;
   padding: 10px 20px;
   flex-direction: column;
 `;
-
-
 
 const Title = styled.a`
   color: ${Theme.primaryText};
@@ -110,8 +98,7 @@ const Title = styled.a`
   font-style: normal;
   align-self: flex-start;
   font-weight: 600;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 18px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -123,13 +110,13 @@ font-family: canada-type-gibson;
 text-rendering: optimizeLegibility;
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  color: ${Theme.primaryText};
+  font-size: 14px;
+  color: ${Theme.secondaryText};
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  margin-left: 8px;
 `;
 
 const ReferralLink = styled.a`
@@ -147,16 +134,14 @@ const ReferralLink = styled.a`
 `;
 
 const MainWrapper = styled.div`
-width: calc(33.33% - 28px);
+display: flex;
+align-items: center;
+width: 400px;
 margin-right: 28px;
 margin-bottom: 20px;
-max-width: 37.5em;
-min-width: 17.5em;
 box-sizing: border-box;
 transition: transform .2s;
-padding: 2px;
-height: 230px;
-width: 200px;
+padding: 16px;
 overflow: hidden;
 box-shadow: 5px 5px #cccccc;
 border: 1px solid #e5e8e8;

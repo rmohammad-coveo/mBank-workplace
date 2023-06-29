@@ -108,7 +108,7 @@ export const MainRecommendationConfig : RecommendationType= {
   concept: 'concepts',
   description : "",
   date: 'date',
-  numberOfResults:5,
+  numberOfResults:6,
   imageField : 'icon',
   pipeline : 'workplace_rec_content',
   searchHub: 'default',
@@ -121,8 +121,8 @@ export const SlackConfig : RecommendationType= {
   concept: 'concepts',
   description : "",
   date: 'date',
-  numberOfResults:5,
-  imageField : 'icon',
+  numberOfResults:6,
+  imageField : 'slackuseravatarurl',
   pipeline : 'slack_content',
   searchHub: 'default',
   id : 'Recommendation'
@@ -132,7 +132,7 @@ export const VideoRecommendationConfig : RecommendationType  = {
 
   title : 'Recommended Videos',
   description : "Here are your personalized recommendations",
-  numberOfResults: 5,
+  numberOfResults: 6,
   imageField : 'ytthumbnailurl',
   pipeline : 'Video Rec Sidebar',
   searchHub: 'default',

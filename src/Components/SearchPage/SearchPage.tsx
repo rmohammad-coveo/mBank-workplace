@@ -203,10 +203,9 @@ const SearchBoxContainer = styled.div`
   @media (max-width: 480px) {
     min-width: 80vw;
   }
-  @media (min-width: 1550px) {
-    margin-right: 650px;
-  }
-  margin-right: 400px;
+  margin-right: auto;
+  margin-left: 20px;
+
 `
 const slideIn = keyframes`
 0% {

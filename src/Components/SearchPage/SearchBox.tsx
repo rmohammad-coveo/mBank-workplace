@@ -35,6 +35,7 @@ const SearchBoxRenderer: FunctionComponent<SearchBoxProps> = (props) => {
 
   return (
     <Container>
+      <SearchButton type='submit' variant="contained" style={{height : '50px'}} onClick={onPressSearchButton}><Icon icon={search} size={24} /></SearchButton>
     <Autocomplete
       inputValue={state.value}
       onInputChange={(_, newInputValue) => {
@@ -47,7 +48,8 @@ const SearchBoxRenderer: FunctionComponent<SearchBoxProps> = (props) => {
       freeSolo
       style={{width: '100%', background: 'white'}}
       renderInput={(params) => (
-        <TextField {...params} placeholder="Search" size="small" className='search-box'/>
+        <TextField {...params} size="small" className='search-box'
+        sx={{"& fieldset": {border:"none"}, marginTop: "4px"}}/>
       )}
       renderOption={(props, option, { inputValue }) => {
         const matches = match(option, inputValue);
@@ -70,7 +72,6 @@ const SearchBoxRenderer: FunctionComponent<SearchBoxProps> = (props) => {
         );
       }}
     />
-    <SearchButton type='submit' variant="contained" style={{height : '39px', marginLeft: '10px'}} onClick={onPressSearchButton}><Icon icon={search} size={24} /></SearchButton>
     </Container>
   );
 };
@@ -93,10 +94,19 @@ export default SearchBox;
 
 const Container = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: row; 
+  border: 1px solid #aaaaaa;
+  border-bottom: 3px solid #2f46de;
+  border-radius: 2px;
 `
 
 const SearchButton = styled(Button)`
-height: 39px;
-margin-left: 10px;
+background-color: white;
+color: #ae0000;
+border: none;
+box-shadow: none;
+&:hover {
+  background-color: white;
+  box-shadow: none;
+}
 `

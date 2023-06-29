@@ -12,6 +12,7 @@ import RecommendtionCard, { SkeletonRecommendtionCard } from "./VideoRecommendat
 import SampleImage from "../../assets/sampleImages/recommendation.png";
 import { CustomContextContext } from "../CustomContext/CustomContextContext";
 import { VideoRecommendationConfig } from "../../config/HomeConfig";
+import Youtube from '../../assets/youtube.png';
 
 interface RecommendationListProps {
   controller: HeadlessRecommendationList;
@@ -53,7 +54,14 @@ export const RecommendationListRenderer: FunctionComponent<
   const NumberOfResult = VideoRecommendationConfig.numberOfResults
   return (
     <MainWrapper>
-      <Title>{VideoRecommendationConfig.title}</Title>
+      <div style={{display: 'flex', width : '100%', alignItems: "center"}}>
+        <div style={{flexDirection: 'row', width : '5%', marginRight: "8px"}}>
+        <Logo src={Youtube}/>
+        </div>
+        <div style={{flexDirection: 'row', width : '95%'}}>
+        <Title>{VideoRecommendationConfig.title}</Title>
+        </div>
+      </div>
       {/* <SubTitle>{VideoRecommendationConfig.description}</SubTitle> */}
       {state.recommendations.length > 0 ?
       <CardWrapper>
@@ -150,6 +158,13 @@ color: ${Theme.primaryText};
 margin-top: 30px;
 margin-bottom: 10px;
 margin-left: 10px;
+`;
+
+const Logo = styled.img`
+width: 50px;
+margin-top: 30px;
+margin-bottom: 10px;
+position: relative;
 `;
 
 const SubTitle = styled.p`

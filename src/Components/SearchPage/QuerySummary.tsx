@@ -46,14 +46,14 @@ const QuerySummaryRenderer: FunctionComponent<QuerySummaryProps> = (props) => {
   };
 
   const renderDuration = () => {
-    return ` in ${state.durationInSeconds} seconds`;
+    return ` w ${state.durationInSeconds} sekundy`;
   };
 
   const renderHasResults = () => {
     return (
       <Box>
         <Box fontWeight="fontWeightBold">
-          Results{renderRange()}
+          wyniki{renderRange()}
           {renderTotal()}
           {renderQuery()}
           {renderDuration()}

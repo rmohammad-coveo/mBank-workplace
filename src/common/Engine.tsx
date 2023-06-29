@@ -69,7 +69,8 @@ export async function initializeHeadlessEngine() {
       },
       search :{
         searchHub : process.env.REACT_APP_SEARCH_HUB!,
-        pipeline: process.env.REACT_APP_SEARCH_ENGINE_PIPELINE!
+        pipeline: process.env.REACT_APP_SEARCH_ENGINE_PIPELINE!,
+        locale: "pl",
       }
     },
   });

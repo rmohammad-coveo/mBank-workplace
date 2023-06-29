@@ -51,7 +51,7 @@ export default function ProfileSelector({ContextData,setProfiledSelected, profil
         sx={{ width: 150, height: 150, marginBottom : '20px'}}
       />
       <FormControl sx={{ m: 1, width: 300 }}>
-        <InputLabel id="demo-multiple-name-label">Name</InputLabel>
+        <InputLabel id="demo-multiple-name-label">nazwa</InputLabel>
         <Select
           labelId="demo-multiple-name-label"
           id="demo-multiple-name"

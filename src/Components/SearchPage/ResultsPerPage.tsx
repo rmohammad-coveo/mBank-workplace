@@ -23,7 +23,7 @@ const ResultsPerPageRenderer: FunctionComponent<ResultsPerPageProps> = (
 
   return (
     <FormControl component="fieldset">
-      <Typography>Results per page</Typography>
+      <Typography>wyniki</Typography>
       <RadioGroup
         row
         value={selected}

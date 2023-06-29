@@ -10,13 +10,13 @@ const ContextForm = () => {
 
   return (
     <Wrapper>
-      <h4>Profile Selector</h4>
+      <h4>wybór profilu</h4>
       <ProfileSelector
         setProfiledSelected={setProfiledSelected}
         profileSelected={profileSelected}
         ContextData={ContextData}
       />
-      <h4>Context</h4>
+      <h4>kontekst</h4>
       <ContextDataTable
         profileSelected={profileSelected}
         setContextData={setContextData}
