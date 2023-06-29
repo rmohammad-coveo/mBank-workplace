@@ -16,6 +16,7 @@ import { CustomContextContext } from "../CustomContext/CustomContextContext";
 import { MainRecommendationConfig } from "../../config/HomeConfig";
 import Bulb from '../../assets/bulb.png';
 import SharePoint from '../../assets/sharePoint_logo.png';
+var _ = require('lodash');
 
 interface RecommendationListProps {
   controller: HeadlessRecommendationList;
@@ -53,8 +54,43 @@ export const RecommendationListRenderer: FunctionComponent<
   };
 
   const skeletonArray = [1, 2, 3];
- 
+
   const NumberOfResult = MainRecommendationConfig.numberOfResults;
+
+  const conceptList: string[] = [
+    "education resources",
+    "sales",
+    "urgency",
+    "frustrating users",
+    "experience relevance",
+    "search functionality",
+    "customer experience",
+    "upcoming events",
+    "unsubscribe",
+    "customize",
+    "service operations",
+    "conversion rates",
+    "communications",
+    "balance",
+    "capabiliies",
+    "product news",
+    "high expectations",
+    "coveo solutions",
+    "online retailers",
+    "personalization",
+    "analytics",
+    "service operations",
+    "term shift",
+    "key features",
+    "marketing automation",
+    "recommendations",
+    "search functionality",
+    "acceleration"
+  ]
+
+  const randConcepts: string[] = _.shuffle(conceptList);
+  const conceptArr = randConcepts.slice(0, NumberOfResult)
+
   return (
     <MainWrapper>
       {state.recommendations.length > 0 ? (
@@ -63,23 +99,18 @@ export const RecommendationListRenderer: FunctionComponent<
             ?.slice(0, NumberOfResult)
             .map((recommendation, index) => {
               const temp: unknown = recommendation.raw[`${MainRecommendationConfig.imageField}`];
-              const tempo:  unknown  = recommendation.raw[`${MainRecommendationConfig.date}`];
-              const dates :  unknown = new Date(Number(recommendation.raw.date));
+              const tempo: unknown = recommendation.raw[`${MainRecommendationConfig.date}`];
+              const dates: unknown = new Date(Number(recommendation.raw.date));
               const concepts: unknown = recommendation.raw[`${MainRecommendationConfig.concept}`]
 
-                console.log(dates, tempo, temp, 'dates, tempo tenp')
+              const imageURL: string = temp as string;
+              const date: number | string = tempo as number;
+              const concep: string[] = concepts as string[];
 
-                const imageURL: string = temp as string;
-                const date:  number | string  = tempo as number;
-                const concep:  string[] = concepts as string[];
+              const shareIcon = recommendation.clickUri.includes('sharepoint');
+              // const concept : any = recommendation.raw.concepts
 
-                console.log(concep, 'concep')
-                console.log(imageURL)
-                console.log(recommendation.clickUri, recommendation.raw, 'recs')
-
-                const shareIcon = recommendation.clickUri.includes('sharepoint');
-                console.log(shareIcon, 'shareicon')
-                // const concept : any = recommendation.raw.concepts
+              const word = conceptArr[index];
 
               return (
                 <div key={recommendation.title + recommendation.uniqueId}>
@@ -87,6 +118,7 @@ export const RecommendationListRenderer: FunctionComponent<
                     video={false}
                     title={recommendation.title}
                     concept={concep}
+                    word={word}
                     description={recommendation.excerpt}
                     date={date}
                     image={imageURL ? imageURL : SampleImage}

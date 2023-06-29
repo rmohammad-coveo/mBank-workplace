@@ -10,6 +10,7 @@ var _= require('lodash');
 interface RecommendationCardType {
   title: string;
   concept: string[];
+  word: string;
   description: string;
   date: number;
   image: string;
@@ -25,6 +26,7 @@ interface RecommendationCardType {
 const RecommendtionCard: React.FC<RecommendationCardType> = ({
   title,
   concept,
+  word,
   clickUri,
   onClick,
   onContextMenu,
@@ -32,8 +34,6 @@ const RecommendtionCard: React.FC<RecommendationCardType> = ({
   onMouseUp,
   source = "",
 }) => {
-
-  let word = _.sample(concept);
 
   return (
     <MainWrapper
@@ -85,6 +85,7 @@ const TextWrapper = styled.div`
   padding: 3px 2px;
   flex-direction: column;
   overflow: hidden;
+  text-transform: capitalize;
   white-space: wrap;
 `;
 
