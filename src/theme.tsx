@@ -5,7 +5,7 @@ export const Theme = {
   primaryText : '#181d3a',
   secondaryText: '#4a4a4a',
   sidePanelNav: '#777777',
-  primary : '#6b6bbd',
+  primary : '#ae0000',
   secondary: '#004990',
   selection : '#6b6bbd',
   link: '#1372EC',

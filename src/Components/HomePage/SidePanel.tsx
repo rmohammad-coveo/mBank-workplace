@@ -165,12 +165,12 @@ height: 50%;
 
 const CopyRight = styled.span`
 display: block;
-position: absolute;
-bottom: 10px;
 text-align: center;
 color: ${Theme.sidePanelNav};
-font-size: 14px;
+font-size: 12px;
+padding: 0 8px;
 font-weight: 600;
+margin-bottom: 10px;
 `
 
 const NavigationLink = styled.a`

@@ -20,7 +20,7 @@ interface RecommendationCardType {
   source?: string;
 }
 
-const RecommendtionCard: React.FC<RecommendationCardType> = ({
+const SlackCard: React.FC<RecommendationCardType> = ({
   title,
   description,
   date,
@@ -65,7 +65,7 @@ const RecommendtionCard: React.FC<RecommendationCardType> = ({
   );
 };
 
-export const SkeletonRecommendtionCard: React.FC = () => {
+export const SkeletonRecommendationCard: React.FC = () => {
   return (
     <MainWrapper>
       <Skeleton
@@ -178,4 +178,4 @@ transition: all 300ms ease;
   }
 `;
 
-export default RecommendtionCard;
+export default SlackCard;
