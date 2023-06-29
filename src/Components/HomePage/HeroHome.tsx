@@ -11,6 +11,7 @@ import SidePanelProfile from "../CustomContext/SidePanelProfile";
 import ContextDataTable from "../CustomContext/ContextDataTable";
 import SidePanel from "../HomePage/SidePanel";
 import Jira from '../../assets/jira_logo.png';
+import { weekdays } from "moment";
 
 const HeroHome: React.FC = ()=>{
     const navigate = useNavigate();
@@ -26,11 +27,16 @@ const HeroHome: React.FC = ()=>{
     let isNight     = HeroConfig.time.getHours() > 22 || HeroConfig.time.getHours() <= 5;
 
     const date = new Date();
-    console.log(date, 'new date');
-
+    const weekday: "long" | "short" | "narrow"  = 'long'
+    const day: "numeric" | "2-digit" = 'numeric';
+    const month: "numeric" | "2-digit" | "long" | "short" | "narrow" = 'long';
+    const year: "numeric" | "2-digit" = 'numeric';
+    const date_options = { weekday:weekday, day:day, month:month, year:year }
+    const date_str = date.toLocaleDateString('pl-PL', date_options);
+    
     return <Wrapper>
                 <div style={{whiteSpace: 'nowrap', width : '100%'}}>
-                <DateToday>{date.toUTCString().slice(0, 16)}</DateToday>
+                <DateToday>{date_str}</DateToday>
                         <Logo src={HeroConfig.background}/>
                         <Title>
                         {HeroConfig.title}<span>{isMorning ? 'Morning': isAfternoon ? 'Afternoon': isEvening ? 'Evening': 'Night'}</span>&nbsp;
@@ -57,7 +63,6 @@ const HeroHome: React.FC = ()=>{
 
 
 const Wrapper = styled.div`
-height: 150px;
 width: 100%;
 font-family: inherit;
 display: block;
@@ -71,7 +76,7 @@ margin-left: 40px;
 `
 
 const DateToday = styled.div`
-margin-top: 10px;
+margin-top: 15px;
 color: ${Theme.primary};
 font-family: canada-type-gibson;
 `
@@ -79,6 +84,9 @@ font-family: canada-type-gibson;
 const Logo = styled.img`
 width: 32px;
 margin-top: 30px;
+position: relative;
+top: 4px;
+filter: drop-shadow(0 0 3px yellow);
 
 display: inline-block;
 `
@@ -141,15 +149,18 @@ margin-top: 20px;
 
 const Button = styled.button`
 display: flex;
-padding: 4px 20px;
+justify-content: cneter;
+align-items: center;
+padding: 8px 24px;
 height: 28px;
 background-color: ${Theme.primary};
-border-radius: 8px;
+border-radius: 24px;
 font-family: inherit;
 font-style: normal;
 font-weight: 400;
 font-size: 13px;
 line-height: 24px;
+margin-bottom: 12px;
 border: none;
 cursor: pointer;
 transition: 0.2s ease-in-out;

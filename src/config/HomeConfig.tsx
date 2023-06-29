@@ -104,14 +104,26 @@ export const HeroHomeConfig : RecommendationType= {
 }
 
 export const MainRecommendationConfig : RecommendationType= {
-
   title : 'You May Be Interested In',
   concept: 'concepts',
   description : "",
   date: 'date',
   numberOfResults:5,
   imageField : 'icon',
-  pipeline : 'WorkShare',
+  pipeline : 'workplace_rec_content',
+  searchHub: 'default',
+  id : 'Recommendation'
+}
+
+export const SlackConfig : RecommendationType= {
+
+  title : 'Your Slack',
+  concept: 'concepts',
+  description : "",
+  date: 'date',
+  numberOfResults:5,
+  imageField : 'icon',
+  pipeline : 'slack_content',
   searchHub: 'default',
   id : 'Recommendation'
 }

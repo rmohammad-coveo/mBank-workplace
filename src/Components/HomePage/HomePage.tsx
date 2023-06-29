@@ -4,7 +4,8 @@ import { Theme } from "../../theme";
 import styled from "styled-components";
 import MainRecommendations from "../Recommendations/MainRecommendations";
 import VideoRecommendations from "../Recommendations/VideoRecommendations";
-import { MainRecommendationConfig, VideoRecommendationConfig } from "../../config/HomeConfig";
+import SlackList from "../Recommendations/SlackList";
+import { MainRecommendationConfig, VideoRecommendationConfig, SlackConfig } from "../../config/HomeConfig";
 
 const HomePage: React.FC = () => {
 
@@ -13,6 +14,7 @@ const HomePage: React.FC = () => {
       <MainWrapper>
         <HeroHome />
         {Object.keys(MainRecommendationConfig).length !== 0 &&  <MainRecommendations />}
+        {Object.keys(SlackConfig).length !== 0 &&  <SlackList />}
         {Object.keys(VideoRecommendationConfig).length !== 0 && <VideoRecommendations />}
       </MainWrapper>
     </>

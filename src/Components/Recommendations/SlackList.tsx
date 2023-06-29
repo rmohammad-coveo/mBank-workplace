@@ -8,12 +8,12 @@ import {
 } from "@coveo/headless/recommendation";
 import { Theme } from "../../theme";
 import styled from "styled-components";
-import RecommendtionCard, {
-  SkeletonRecommendtionCard,
-} from "./RecommendationCard";
+import SlackCard, {
+  SkeletonRecommendationCard,
+} from "./SlackCard";
 import SampleImage from "../../assets/sampleImages/recommendation.png";
 import { CustomContextContext } from "../CustomContext/CustomContextContext";
-import { MainRecommendationConfig } from "../../config/HomeConfig";
+import { SlackConfig } from "../../config/HomeConfig";
 import Bulb from '../../assets/bulb.png';
 import SharePoint from '../../assets/sharePoint_logo.png';
 import Coveo from '../../assets/coveo.png';
@@ -55,7 +55,7 @@ export const RecommendationListRenderer: FunctionComponent<
 
   const skeletonArray = [1, 2, 3];
  
-  const NumberOfResult = MainRecommendationConfig.numberOfResults;
+  const NumberOfResult = SlackConfig.numberOfResults;
   return (
     <MainWrapper>
       <div style={{display: 'flex', width : '100%'}}>
@@ -63,7 +63,7 @@ export const RecommendationListRenderer: FunctionComponent<
         <Logo src={Bulb}/>
         </div>
         <div style={{flexDirection: 'row', width : '95%'}}>
-        <Title>{MainRecommendationConfig.title}</Title>
+        <Title>{SlackConfig.title}</Title>
         </div>
       </div>
       {state.recommendations.length > 0 ? (
@@ -71,15 +71,15 @@ export const RecommendationListRenderer: FunctionComponent<
           {state?.recommendations
             ?.slice(0, NumberOfResult)
             .map((recommendation, index) => {
-              const temp: unknown = recommendation.raw[`${MainRecommendationConfig.imageField}`];
-              const tempo:  unknown  = recommendation.raw[`${MainRecommendationConfig.date}`];
+              const temp: unknown = recommendation.raw[`${SlackConfig.imageField}`];
+              const tempo:  unknown  = recommendation.raw[`${SlackConfig.date}`];
 
                 const imageURL: string = temp as string;
                 const date:  number | string  = tempo as number;
 
               return (
                 <div key={recommendation.title + recommendation.uniqueId}>
-                  <RecommendtionCard
+                  <SlackCard
                     video={false}
                     title={recommendation.title}
                     description={recommendation.excerpt}
@@ -100,7 +100,7 @@ export const RecommendationListRenderer: FunctionComponent<
           {skeletonArray.map((item, index) => {
             return (
               <div key={item}>
-                <SkeletonRecommendtionCard />
+                <SkeletonRecommendationCard />
               </div>
             );
           })}
@@ -110,13 +110,13 @@ export const RecommendationListRenderer: FunctionComponent<
   );
 };
 
-const MainRecommendationList = () => {
+const SlackList = () => {
   const recommendationEngine = buildRecommendationEngine({
     configuration: {
       organizationId: process.env.REACT_APP_ORGANIZATION_ID!,
       accessToken: process.env.REACT_APP_API_KEY!,
-      searchHub: MainRecommendationConfig.searchHub,
-      pipeline: MainRecommendationConfig.pipeline,
+      searchHub: SlackConfig.searchHub,
+      pipeline: SlackConfig.pipeline,
       platformUrl: process.env.REACT_APP_PLATFORM_URL
     },
   });
@@ -126,7 +126,7 @@ const MainRecommendationList = () => {
   settingContextFromEngine(recommendationEngine);
 
   const recController = buildRecommendationList(recommendationEngine, {
-    options: { id: MainRecommendationConfig.id },
+    options: { id: SlackConfig.id },
   });
 
   return (
@@ -137,7 +137,7 @@ const MainRecommendationList = () => {
   );
 };
 
-export default MainRecommendationList;
+export default SlackList;
 
 const MainWrapper = styled.div`
   width: 95%;
