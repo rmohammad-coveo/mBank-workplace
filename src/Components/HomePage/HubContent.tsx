@@ -31,11 +31,9 @@ const HubContent: React.FC = ()=>{
     
 
     const docname = FilteredProfileContext[0].name === 'Anonymous'? '': FilteredProfileContext[0].files[0];
-    console.log(docname, 'docname')
     const doctype = FilteredProfileContext[0].name === 'Anonymous'? '': FilteredProfileContext[0].files[1];
     const docdate = FilteredProfileContext[0].name === 'Anonymous'? '': FilteredProfileContext[0].files[2];
     const docimg = FilteredProfileContext[0].name === 'Anonymous'? '': FilteredProfileContext[0].files[3];
-    console.log(docname, role, dept, source)
 
     return (
         <Main>
@@ -76,9 +74,9 @@ const HubContent: React.FC = ()=>{
                                 
                             </div>
                             <h2>Tools</h2>
-                            {ToolsConfig.map((tool)=>{
+                            {ToolsConfig.map((tool, index)=>{
                                 return (
-                                    <div style={{display: 'flex', marginBottom: '10px', marginTop: '10px'}}>
+                                    <div key={index} style={{display: 'flex', marginBottom: '10px', marginTop: '10px'}}>
                                         <img src={tool.image} style={{width: '35px', height: '35px'}}/>
                                         <span style={{paddingLeft: '15px'}}>
                                             <h4>{tool.title}</h4>

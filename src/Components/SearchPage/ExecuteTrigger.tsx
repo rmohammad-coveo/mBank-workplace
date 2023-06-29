@@ -23,7 +23,7 @@ import EngineContext from '../../common/engineContext';
     };
    
     const log = (params: ExecuteTriggerParams) => {
-      console.log('Function is called here',params)
+      /* console.log('Function is called here',params) */
     };
    
     const unsubscribe = controller.subscribe(() => executeFunction());

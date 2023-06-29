@@ -73,7 +73,7 @@ export const SkeletonRecommendationCard: React.FC = () => {
 };
 
 const ImageContainer = styled.div`
-  overflow: hidden;
+
 `;
 
 const Image = styled.img`
@@ -82,6 +82,7 @@ object-fit: contain;
 object-position: center center;
 height: 50px;
 width: 50px;
+filter: drop-shadow(0 0 1px #242424);
 margin-left: 15px;
 transition: 0.2s ease-in-out all;
 `;

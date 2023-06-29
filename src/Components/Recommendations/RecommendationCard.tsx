@@ -55,9 +55,9 @@ const RecommendtionCard: React.FC<RecommendationCardType> = ({
         <SubTitle>{description}</SubTitle>
         <ReferralLink>
         {newdate.getDate() +
-                      "/" +
+                      "." +
                       (newdate.getMonth() + 1) +
-                      "/" +
+                      "." +
                       newdate.getFullYear()}
         </ReferralLink>
       </TextWrapper>
@@ -89,8 +89,7 @@ const ImageContainer = styled.div`
 const Image = styled.img`
 object-fit: contain;
 object-position: center center;
-width: 20%;
-height: 20%;
+width: 40px;
 margin-left: 15px;
 transition: 0.2s ease-in-out all;
 `;

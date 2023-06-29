@@ -72,8 +72,6 @@ export const RecommendationListRenderer: FunctionComponent<
 
                 const imageURL: string = temp as string;
                 const date: number = tempo as number;
-  
-                console.log(recommendation.raw.date)
 
           return (
             <div key = {recommendation.title + recommendation.uniqueId}>

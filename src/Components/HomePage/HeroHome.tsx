@@ -18,7 +18,6 @@ const HeroHome: React.FC = ()=>{
     const {profileSelected, setProfiledSelected, ContextData,setContextData,handleSave, } = useContext(CustomContextContext);
     const FilteredProfileContext = ContextData.filter((item: any)=> item.name === profileSelected)
     const task = FilteredProfileContext[0].name === 'Anonymous'? '': FilteredProfileContext[0].tasks;
-    console.log(task, 'task')
 
 
     let isMorning   = HeroConfig.time.getHours() > 5  && HeroConfig.time.getHours() <= 12;

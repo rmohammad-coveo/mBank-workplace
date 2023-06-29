@@ -17,6 +17,8 @@ import { MainRecommendationConfig } from "../../config/HomeConfig";
 import Bulb from '../../assets/bulb.png';
 import SharePoint from '../../assets/sharePoint_logo.png';
 import Coveo from '../../assets/coveo.png';
+import globe from '../../assets/globe.png';
+import pdf from '../../assets/FileTypeIcons/pdf.svg'
 
 interface RecommendationListProps {
   controller: HeadlessRecommendationList;
@@ -84,7 +86,7 @@ export const RecommendationListRenderer: FunctionComponent<
                     title={recommendation.title}
                     description={recommendation.excerpt}
                     date={date}
-                    image={imageURL ? imageURL : Coveo}
+                    image={recommendation.raw.filetype === "pdf" ? pdf : globe}
                     clickUri={recommendation.clickUri}
                     onClick={() => logClick(recommendation)}
                     onContextMenu={() => logClick(recommendation)}

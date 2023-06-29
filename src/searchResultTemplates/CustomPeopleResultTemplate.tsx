@@ -57,7 +57,7 @@ const CustomPeopleResultTemplate: React.FC<{
         facet.value.toLowerCase().replace(/\s/g, "") ===
         item.toLowerCase().replace(/\s/g, "")
     )[0];
-    console.log(facetValue);
+/*     console.log(facetValue); */
     if (facetValue) {
       facetController.adspecial.toggleSelect(facetValue);
     }

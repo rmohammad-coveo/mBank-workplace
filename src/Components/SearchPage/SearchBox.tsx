@@ -48,7 +48,7 @@ const SearchBoxRenderer: FunctionComponent<SearchBoxProps> = (props) => {
       freeSolo
       style={{width: '100%', background: 'white'}}
       renderInput={(params) => (
-        <TextField {...params} size="small" className='search-box'
+        <TextField {...params} size="medium" className='search-box' placeholder="Czego szukasz?"
         sx={{"& fieldset": {border:"none"}, marginTop: "4px"}}/>
       )}
       renderOption={(props, option, { inputValue }) => {
@@ -95,6 +95,7 @@ export default SearchBox;
 const Container = styled.div`
   display: flex;
   flex-direction: row; 
+  align-items: center;
   border: 1px solid #aaaaaa;
   border-bottom: 3px solid #2f46de;
   border-radius: 2px;
