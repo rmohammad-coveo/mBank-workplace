@@ -130,9 +130,6 @@ color:  white;
 @media (max-width: 480px) {
     width: 80%;
 }
-&:hover {
-    color: #023f88;
-}
 `
 
 const SubTitle = styled.p`
@@ -165,7 +162,7 @@ border: none;
 cursor: pointer;
 transition: 0.2s ease-in-out;
 &:hover {
-    background-color:white;
+    background-color: #6e1414;
 }
 
 `

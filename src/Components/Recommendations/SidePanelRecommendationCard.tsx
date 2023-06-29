@@ -4,8 +4,7 @@ import styled from "styled-components";
 import { chevronRight } from "react-icons-kit/feather/chevronRight";
 import { Icon } from "react-icons-kit";
 import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
-var _= require('lodash');
+import "react-loading-skeleton/dist/skeleton.css";  
 
 interface RecommendationCardType {
   title: string;

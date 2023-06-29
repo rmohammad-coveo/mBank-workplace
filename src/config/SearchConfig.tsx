@@ -190,8 +190,8 @@ export const SearchPageTabConfig : SearchPageTabConfigType[] = [
     facetToInclude: ["source","author", "concepts",],
   },
   {
-    caption: "Coveo Blog",
-    expression: `@source==Blog`,
+    caption: "KNF",
+    expression: `@source==KNF`,
     isActive: false,
     sideBarRecommendationConfig: [
       {
@@ -205,9 +205,15 @@ export const SearchPageTabConfig : SearchPageTabConfigType[] = [
     ],
     facetToInclude: ["author", "concepts"],
   },
-  {
+  /* {
     caption: "HR",
     expression: `@sourcetype==("Sitemap")`,
+    isActive: false,
+    facetToInclude: ["concepts"],
+  }, */
+  {
+    caption: "Gazeta",
+    expression: `@source==Gazeta`,
     isActive: false,
     facetToInclude: ["concepts"],
   },
@@ -218,17 +224,17 @@ export const SearchPageTabConfig : SearchPageTabConfigType[] = [
     facetToInclude: ["concepts"],
   },
   {
-    caption: "Facebook",
-    expression: `@filetype=("PostFB", "CommentFB")`,
+    caption: "Facebook Marketplace",
+    expression: ``,
     isActive: false,
     facetToInclude: ["concepts"],
   },
-  {
+/*   {
     caption: "Coveo Web",
     expression: `@source==("Sitemap")`,
     isActive: false,
     facetToInclude: ["concepts"],
-  },
+  }, */
   {
     caption: "Youtube",
     expression: `@filetype=="youtubevideo"`,
