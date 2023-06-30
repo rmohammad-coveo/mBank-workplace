@@ -20,7 +20,7 @@ const QuerySummaryRenderer: FunctionComponent<QuerySummaryProps> = (props) => {
   );
 
   const renderNoResults = () => {
-    return <Box mt={5}>No results</Box>;
+    return <Box mt={5}>brak wynikóws</Box>;
   };
 
   const renderBold = (input: string) => {
@@ -36,12 +36,12 @@ const QuerySummaryRenderer: FunctionComponent<QuerySummaryProps> = (props) => {
   };
 
   const renderTotal = () => {
-    return <Box component="span"> of {renderBold(state.total.toString())}</Box>;
+    return <Box component="span"> z {renderBold(state.total.toString())}</Box>;
   };
 
   const renderQuery = () => {
     if (state.hasQuery) {
-      return <Box component="span"> for {renderBold(state.query)}</Box>;
+      return <Box component="span"> dla {renderBold(state.query)}</Box>;
     }
   };
 

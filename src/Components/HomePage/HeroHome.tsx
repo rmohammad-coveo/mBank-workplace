@@ -38,7 +38,8 @@ const HeroHome: React.FC = ()=>{
                 <DateToday>{date_str}</DateToday>
                         <Logo src={HeroConfig.background}/>
                         <Title>
-                        {HeroConfig.title}<span>{isMorning ? 'Morning': isAfternoon ? 'Afternoon': isEvening ? 'Evening': 'Night'}</span>&nbsp;
+                        {/* {HeroConfig.title}<span>{isMorning ? 'Morning': isAfternoon ? 'Afternoon': isEvening ? 'Evening': 'Night'}</span>&nbsp; */}
+                        <span>Witaj</span>&nbsp;
                         {FilteredProfileContext[0].name.split(" ", 2)[0] === 'Anonymous'? '': FilteredProfileContext[0].name.split(" ", 2)[0]} !
                         </Title>
                         <SubTitle>{HeroConfig.subtitle}</SubTitle> 

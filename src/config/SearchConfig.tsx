@@ -29,7 +29,7 @@ export const FacetConfig = [
   },
   {
     field: "author",
-    title: "Author",
+    title: "Twórca",
   },
   {
     field: "filetype",

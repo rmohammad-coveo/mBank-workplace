@@ -60,7 +60,7 @@ export default function ProfileSelector({ContextData,setProfiledSelected, profil
       <h5>{FilteredProfileContext[0].department}</h5>
       <ProfileData>{FilteredProfileContext[0].location}</ProfileData>
       <br/>
-      {FilteredProfileContext[0].years_of_service && (<ProfileData>Joined {FilteredProfileContext[0].years_of_service} years ago</ProfileData>)}
+      {FilteredProfileContext[0].years_of_service && (<ProfileData>Dołączył(a) {FilteredProfileContext[0].years_of_service} lat temu</ProfileData>)}
     </div>
     </div>
   );

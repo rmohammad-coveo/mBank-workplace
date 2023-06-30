@@ -54,7 +54,7 @@ const RecommendtionCard: React.FC<RecommendationCardType> = ({
         <Title>{title}</Title>
         <SubTitle>{description}</SubTitle>
         <ReferralLink>
-          {!video ? "Learn more" : "Watch now"}{" "}
+          oglądaj teraz
           <div style={{ marginLeft: "5px", color: Theme.primary }}>
             <Icon icon={chevronRight} />
           </div>
@@ -104,8 +104,7 @@ text-rendering: optimizeLegibility;
 font-style: normal;
 align-self: flex-start;
 font-weight: 600;
-font-size: 12px;
-line-height: 16px;
+font-size: 16px;
 display: -webkit-box;
 -webkit-line-clamp: 2;
 -webkit-box-orient: vertical;
@@ -117,8 +116,7 @@ font-family: canada-type-gibson;
 text-rendering: optimizeLegibility;
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
+  font-size: 14px;
   color: ${Theme.primaryText};
   display: -webkit-box;
   -webkit-line-clamp: 5;
@@ -146,18 +144,18 @@ margin-bottom: 20px;
 max-width: 37.5em;
 min-width: 17.5em;
 box-sizing: border-box;
-transition: transform .2s;
-padding: 2px;
+transition: all .3s ease;
 height: 370px;
 width: 200px;
 overflow: hidden;
-border-radius: 2px;
-box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
-border: 1px solid rgba(229, 231, 235, .5);
+box-shadow: 5px 5px #cccccc;
+border: 1px solid #e5e8e8;
 cursor: pointer;
 
-&:hover{
-  transform: scale(1.05);
+&:hover {
+  border-color: #ae0000;
+  box-shadow: 0 0 0 #cccccc;
+  filter: brightness(0.9);
 }
 
   &:hover ${ReferralLink} {

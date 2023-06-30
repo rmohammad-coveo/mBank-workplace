@@ -24,13 +24,13 @@ export const InitialData = [
   {
     name: "Regina Hall",
     email : "regina.hall@coveo.com",
-    role: 'Operational Lead',
+    role: 'kierownik operacyjny',
     department:'HR',
     location:'London, UK',
     years_of_service: '6',
     profile: "https://ntvb.tmsimg.com/assets/assets/167728_v3_bb.jpg",
     people_worked_with:['Sarah Young', 'HR Specialist', 'HR', "https://www.famousbirthdays.com/faces/rafferty-sarah-image.jpg"],
-    tasks: ["Complete training course", "Book in meeting with the team"],
+    tasks: ["Zacznij szkolenie", "Zorganizuj spotkanie ze swoim zespołem"],
     files:['Plan Benefits Open Enrollment', 'Documents', 'Dec 16 2022', SharePoint],
     context: [
       {
@@ -44,14 +44,14 @@ export const InitialData = [
   {
     name: "Jesse Eisenberg",
     email : "jeisenberg@coveo.com",
-    role: 'Software Developer',
+    role: 'programista',
     department:'R&D',
     location:'Montreal, CA',
     years_of_service: '2',
     profile:
       "https://www.themoviedb.org/t/p/w500/yYhwWRcxDHTn63gSEF1vnDAD7cD.jpg",
     people_worked_with:['Dule Hill', 'Director','Engineering', "https://vz.cnwimg.com/wp-content/uploads/2011/07/Dule-Hill-e1567471440831.jpg"],
-    tasks: ["Meet with HR", "Meet with Antoine"],
+    tasks: ["Skontaktuj się z zespołem ds. kadr", "Skontaktuj się z Antoine"],
     files:['Free Food and other Culinary Perks at Coveo', 'Documents','Nov 23 2021', SharePoint],
     context: [
       {

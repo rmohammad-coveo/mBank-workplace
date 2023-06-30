@@ -54,7 +54,7 @@ export const HeaderConfig = [
 export const HeroConfig = {
     title  : 'Good ',
     time : new Date(),
-    subtitle:'Your tasks today',
+    subtitle:'Twoje dzisiejsze zadania',
     description : '',
     background : Sun,
     buttonText : 'Explore here',
@@ -92,7 +92,7 @@ export const ToolsConfig = [
 
 export const HeroHomeConfig : RecommendationType= {
 
-  title : 'Your tasks today',
+  title : 'Twoje dzisiejsze zadania',
   concept: 'concepts',
   description : "",
   date: 'date',
@@ -104,7 +104,7 @@ export const HeroHomeConfig : RecommendationType= {
 }
 
 export const MainRecommendationConfig : RecommendationType= {
-  title : 'You May Be Interested In',
+  title : 'Informacje które mogą cię zainteresować',
   concept: 'concepts',
   description : "",
   date: 'date',
@@ -117,7 +117,7 @@ export const MainRecommendationConfig : RecommendationType= {
 
 export const SlackConfig : RecommendationType= {
 
-  title : 'Your Slack',
+  title : 'Twój Slack',
   concept: 'concepts',
   description : "",
   date: 'date',
@@ -130,9 +130,9 @@ export const SlackConfig : RecommendationType= {
 
 export const VideoRecommendationConfig : RecommendationType  = {
 
-  title : 'Recommended Videos',
+  title : 'Polecane filmy',
   description : "Here are your personalized recommendations",
-  numberOfResults: 6,
+  numberOfResults: 3,
   imageField : 'ytthumbnailurl',
   pipeline : 'Video Rec Sidebar',
   searchHub: 'default',

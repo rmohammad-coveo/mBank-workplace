@@ -44,9 +44,9 @@ const HubContent: React.FC = ()=>{
                     <RightSection>
                         <Trending>
                         <br/>
-                            <h2>Trending Topics</h2>
+                            <h2>Popularne tematy</h2>
                             <SideRecommendation />
-                            <h2>People You Worked With</h2>
+                            <h2>Osoby z którymi Państwo pracuja</h2>
                             <div style={{display: 'flex', marginTop: '20px', marginBottom: '20px'}}> 
                             <div>
                             <Avatar
@@ -61,7 +61,7 @@ const HubContent: React.FC = ()=>{
                              <p style={{fontSize: '11px'}}>{dept}</p>
                              </div>
                              </div>
-                            <h2>Relevant Files</h2>
+                            <h2>Podobne pliki</h2>
                             <div style={{display: 'flex', marginTop: '10px', marginBottom: '20px'}}> 
                             <div>
                                 {FilteredProfileContext[0].name === 'Anonymous'? 'None': <img src={docimg} style={{width:'36px', height: '36px'}}/>}
@@ -73,7 +73,7 @@ const HubContent: React.FC = ()=>{
                             </div>
                                 
                             </div>
-                            <h2>Tools</h2>
+                            <h2>Twoje programy</h2>
                             {ToolsConfig.map((tool, index)=>{
                                 return (
                                     <div key={index} style={{display: 'flex', marginBottom: '10px', marginTop: '10px'}}>
